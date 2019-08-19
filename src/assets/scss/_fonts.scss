@@ -1,0 +1,19 @@
+@font-face {
+  font-weight: 500;
+  font-family: 'Museo Sans';
+  font-style: normal;
+
+  src: url('../fonts/museosans_500-webfont.woff2') format('woff2'),
+  url('../fonts/museosans_500-webfont.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: 'Museo Sans';
+  font-style: normal;
+
+  src: url('../fonts/museosans-700-webfont.woff2') format('woff2'),
+  url('../fonts/museosans-700-webfont.woff') format('woff');
+  font-display: swap;
+}

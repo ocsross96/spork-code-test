@@ -1,0 +1,45 @@
+@import '../../assets/scss/base.scss';
+
+.container--inline {
+  transition: transform 0.1s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.container--overlay {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 4% 4%;
+
+  font-size: 14px;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+
+  background-size: contain;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.avatar--overlay {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 8px;
+
+  background-size: contain;
+  border: 1px solid #fff;
+  border-radius: 50%;
+
+  @include responsiveMediumAndAbove() {
+    width: 60px;
+    height: 60px;
+  }
+  @include responsiveExtraLargeAndAbove() {
+    width: 50px;
+    height: 50px;
+  }
+}

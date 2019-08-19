@@ -1,0 +1,17 @@
+@mixin responsiveMediumAndAbove() {
+  @media screen and (min-width: $responsive-collapse-small), print {
+    @content;
+  }
+}
+
+@mixin responsiveLargeAndAbove() {
+  @media screen and (min-width: $responsive-collapse-medium), print {
+    @content;
+  }
+}
+
+@mixin responsiveExtraLargeAndAbove() {
+  @media screen and (min-width: $responsive-collapse-large), print {
+    @content;
+  }
+}

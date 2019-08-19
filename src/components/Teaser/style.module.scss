@@ -1,0 +1,86 @@
+@import '../../assets/scss/base.scss';
+
+.teaser {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero {
+  position: relative;
+
+  overflow: hidden;
+
+  line-height: 0;
+
+  border-radius: 8px;
+}
+
+.hero:hover {
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.4);
+}
+
+.photo {
+  max-width: 100%;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.inline-avatars {
+  position: absolute;
+  right: 3%;
+  bottom: 4%;
+
+  display: inline-flex;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 100%;
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  width: 100%;
+  padding: 5% 0 0;
+
+  background-color: #19171a;
+  border-radius: 8px;
+
+  transition: left 0.1s cubic-bezier(0.39, 0.58, 0.57, 1);
+}
+
+.overlay--visible {
+  left: 0;
+}
+
+.overlay-btn {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+  height: 12%;
+
+  color: #fff;
+
+  background-color: #fd6462;
+  border: none;
+  border-top-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  cursor: pointer;
+}
+
+.chevron {
+  width: 70%;
+  height: 70%;
+}

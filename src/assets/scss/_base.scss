@@ -1,0 +1,9 @@
+@import './root';
+@import './mixins';
+@import '~normalize.css';
+@import './fonts';
+
+body {
+  font-family: 'Museo Sans', 'sans-serif';
+  padding: 20px;
+}

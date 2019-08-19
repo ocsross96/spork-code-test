@@ -1,0 +1,21 @@
+@import '../../assets/scss/base';
+
+/* autoprefixer grid: autoplace */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+  @include responsiveMediumAndAbove() {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include responsiveLargeAndAbove() {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @include responsiveExtraLargeAndAbove() {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
