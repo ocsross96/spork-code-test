@@ -1,3 +1,9 @@
+@mixin responsiveSmallAndAbove() {
+  @media screen and (min-width: $responsive-collapse-x-small), print {
+    @content;
+  }
+}
+
 @mixin responsiveMediumAndAbove() {
   @media screen and (min-width: $responsive-collapse-small), print {
     @content;

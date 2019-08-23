@@ -1,21 +1,27 @@
 @import '../../assets/scss/base';
 
-/* autoprefixer grid: autoplace */
-
 .grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
+  display: block;
 
   @include responsiveMediumAndAbove() {
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
+}
+
+.cell {
+  margin-bottom: 15px;
+
+  @include responsiveMediumAndAbove() {
+    width: calc(50% - 10px);
+  } 
 
   @include responsiveLargeAndAbove() {
-    grid-template-columns: 1fr 1fr 1fr;
+    width: calc(33.33% - 10px);
   }
 
   @include responsiveExtraLargeAndAbove() {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: calc(25% - 10px);
   }
 }
