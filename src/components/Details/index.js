@@ -1,8 +1,24 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import style from './style.module.scss';
 
-const details = ({
+const propTypes = {
+  rentPerMonth: PropTypes.number.isRequired,
+  roomTitle: PropTypes.string.isRequired,
+  area: PropTypes.string.isRequired,
+  walkIcon: PropTypes.string.isRequired,
+  transport: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    distance: PropTypes.shape({
+      time: PropTypes.string.isRequired
+    }),
+  }),
+  transportName: PropTypes.string.isRequired,
+  transportSystemIcon: PropTypes.string.isRequired
+};
+
+const Details = ({
   rentPerMonth,
   roomTitle,
   area,
@@ -36,4 +52,6 @@ const details = ({
   )
 }
 
-export default details;
+Details.propTypes = propTypes;
+
+export default Details;

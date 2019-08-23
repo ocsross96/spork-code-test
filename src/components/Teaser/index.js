@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 import chevronLeft from '../../assets/images/chevron-left.svg';
 import walkIcon from '../../assets/images/walk-icon--black.svg';
@@ -12,6 +13,30 @@ import Avatar from '../Avatar';
 import style from './style.module.scss';
 
 const getTransportName = ({name, type}) => name.substring(0, name.toLowerCase().indexOf(type)).trim();
+
+const propTypes = {
+  uuid: PropTypes.string.isRequired,
+  photos: PropTypes.arrayOf(PropTypes.shape({
+    uuid: PropTypes.string.isRequired,
+    cdnUrl: PropTypes.string.isRequired
+  })),
+  featuredPhoto: PropTypes.string.isRequired,
+  roomTitle: PropTypes.string.isRequired,
+  rentPerMonth: PropTypes.number.isRequired,
+  area: PropTypes.string.isRequired,
+  transport: PropTypes.shape({
+    type: PropTypes.string.isRequired,
+    distance: PropTypes.shape({
+      time: PropTypes.string.isRequired
+    }),
+  }),
+  roommates: PropTypes.arrayOf(PropTypes.shape({
+    firstName: PropTypes.string.isRequired,
+    profilePic: PropTypes.shape({
+      cdnUrl: PropTypes.string.isRequired
+    })
+  }))
+};
 
 const Teaser = ({
   uuid,
@@ -53,6 +78,7 @@ const Teaser = ({
           </button>
           {roommates.map((roomMate) => (
             <Avatar
+              key={roomMate.uuid}
               id={roomMate.uuid}
               firstName={roomMate.firstName}
               imageSrc={roomMate.profilePic.cdnUrl}
@@ -70,6 +96,7 @@ const Teaser = ({
             const translateXVal = isAvatarsHovered ? -((arr.length - index - 1)*5) : ((arr.length - index)*20)-20;
             return (
               <Avatar
+                key={roomMate.uuid}
                 id={roomMate.uuid}
                 firstName={roomMate.firstName}
                 imageSrc={roomMate.profilePic.cdnUrl}
@@ -94,6 +121,8 @@ const Teaser = ({
     </div>
   )
 }
+
+Teaser.propTypes = propTypes;
 
 export default Teaser;
 

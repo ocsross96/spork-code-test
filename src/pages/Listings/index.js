@@ -25,6 +25,7 @@ const Listings = (props) => {
         if (jsonResponse && jsonResponse.results) {
           dispatch({ type: FETCH_LISTINGS_SUCCESS, payload: jsonResponse.results });
         }
+
       } catch (err) {
         console.log('ERROR FETCHING RESULTS:', err.message);
         dispatch({ type: FETCH_LISTINGS_FAILURE, payload: 'Sorry results are unavailable at this time, please refresh the page to try again' });
@@ -33,7 +34,7 @@ const Listings = (props) => {
 
     fetchListings();
 
-  }, []);
+  }, [dispatch]);
 
 
   if (listings.isFetching) {
